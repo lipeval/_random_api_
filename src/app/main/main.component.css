@@ -1,0 +1,25 @@
+input {
+    padding: 5px;
+    margin-bottom: 15px;
+    border-left: none;
+    border-top: none;
+    border-right: none
+}
+
+label {
+    color: rgb(3, 3, 99)
+}
+
+.border_bottom {
+    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+
+
+}
+
+.center_table {
+    width: 70%;
+    margin-left: 11rem;
+    margin-right: 0rem;
+    margin-bottom: 3rem
+}

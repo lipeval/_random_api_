@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "random-api"
+    }
+  },
+  "defaultProject": "random-api",
+  "cli": {
+    "analytics": false
+  }
 }

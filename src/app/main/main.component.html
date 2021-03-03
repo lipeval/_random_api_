@@ -1,0 +1,66 @@
+<div class="container">
+    <h1 style="margin-top: 2rem; margin-bottom: 2rem; text-align: center;">Personas</h1>
+    <table class="table table-borderless center_table">
+        <thead class="border_bottom">
+            <tr >
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>Documento</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let person of persons">
+            <tr >
+                <td>{{person.name}}</td>
+                <td>{{person.age}}</td>
+                <td>{{person.sexo}}</td>
+                <td><a href="{{person.doc}}"><i class="fa fa-file" aria-hidden="true"></i></a></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+
+<div style="margin-bottom: 3rem; margin-left: 11.3rem;">
+    <h3>Agregar Persona</h3>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <label for="Nombre"> Nombre:</label>
+            <div class="col">
+                <input type="text" formControlName="name">
+            </div>
+            <label for="Nombre"> Edad:</label>
+            <div class="col">
+               
+                <input type="number" formControlName="age">
+            </div>
+            <label for="Nombre"> Sexo:</label>
+            <div class="col">
+                
+    
+                <input type="text" formControlName="sexo">
+            </div>
+        </div>
+       
+
+
+        <input formControlName="doc" style="display: none" type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+
+        <div class="file-upload">
+
+          {{fileName || "No se ha subido archivo."}}
+
+          <button type="button" class="btn btn-secondary" (click)="fileUpload.click()">
+              Subir
+          </button>
+        </div>
+        <p *ngIf="!contactForm.valid">Porfavor llena los campos</p>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        
+    </form>
+</div>
+
+</div>
+
+
